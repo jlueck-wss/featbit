@@ -10,6 +10,7 @@ public static class Topics
     public const string SegmentChange = "featbit-segment-change";
 
     public const string Insights = "featbit-insights";
+    public const string FeatbitConnectionMade = "featbit-connection-made";
 
     public static string ToChannel(string topic) => topic switch
     {
