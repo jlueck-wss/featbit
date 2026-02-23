@@ -51,7 +51,7 @@ public sealed partial class ConnectionManager(ILogger<ConnectionManager> logger,
 
                 if (connectionRemoved)
                 {
-                    await producer.PublishAsync(Topics.FeatbitConnectionMade, ConnectionMessage.CreateConnectionClosedMessage(context.Connection.Id, context.Connection.EnvId, mappedConnection.Secret.ProjectKey));
+                    await producer.PublishAsync(Topics.FeatbitConnectionClosed, ConnectionMessage.CreateConnectionClosedMessage(context.Connection.Id, context.Connection.EnvId, mappedConnection.Secret.ProjectKey));
                 }
             }
         }
@@ -61,7 +61,7 @@ public sealed partial class ConnectionManager(ILogger<ConnectionManager> logger,
 
             if (connectionRemoved)
             {
-                await producer.PublishAsync(Topics.FeatbitConnectionMade, ConnectionMessage.CreateConnectionClosedMessage(context.Connection.Id, context.Connection.EnvId, context.Connection.Secret.ProjectKey));
+                await producer.PublishAsync(Topics.FeatbitConnectionClosed, ConnectionMessage.CreateConnectionClosedMessage(context.Connection.Id, context.Connection.EnvId, context.Connection.Secret.ProjectKey));
             }
 
         }
