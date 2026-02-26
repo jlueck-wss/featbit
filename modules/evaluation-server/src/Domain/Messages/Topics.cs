@@ -13,6 +13,8 @@ public static class Topics
     public const string FeatbitConnectionMade = "featbit-connection-made";
     public const string FeatbitConnectionClosed = "featbit-connection-closed";
 
+    public const string PodHeartbeat = "featbit-pod-heartbeat";
+
     public static string ToChannel(string topic) => topic switch
     {
         FeatureFlagChange => "featbit_feature_flag_change_channel",
