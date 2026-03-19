@@ -97,6 +97,7 @@ export interface IFeatureFlagCreationPayload {
   enabledVariationId: string;
   disabledVariationId: string;
   variations: IVariation[];
+  isTracked: boolean;
 }
 
 export const getFlagRN = (key: string, tags: string[]) => {
